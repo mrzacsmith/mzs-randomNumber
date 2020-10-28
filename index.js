@@ -1,13 +1,10 @@
-const randomNumGenerator = (min, max, int = false) => {
-  if (typeof max !== 'number' && typeof min !== 'number') {
-    min = 0
-    max = 1
-  }
-  if (int === true) {
-    return Math.floor(Math.random() * (max - min) + min)
-  }
 
-  return Math.random() * (max - min) + min
-}
+function randomNumber(min, max) {  
+  min = Math.ceil(min); 
+  max = Math.floor(max); 
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}  
 
-module.exports = randomNumGenerator
+document.write("Random Number between 1 and 100: ")  
+
+document.write( randomNumber(1, 100) );  
